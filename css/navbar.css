@@ -3,7 +3,11 @@
     src: url(../font/Pokemon\ Solid.ttf);
 }
 
-.navbar {
+body {
+    background-color: green;
+}
+
+.navbar-container {
     width: 100%;
     height: 70px;
     position: fixed;
@@ -11,12 +15,20 @@
     background: linear-gradient(black, rgb(0, 0, 80));
 }
 
+.navbar {
+    margin: auto;
+    width: 1024px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-right: 35px;
+}
+
 .navbar ul {
     width: 100%;
     height: 100%;
-    padding-top: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
     display: flex;
     justify-content: start;
 }
@@ -27,7 +39,7 @@
 }
 
 .navbar li.menu-container {
-    width: 175px;
+    width: 150px;
     height: 100%;
 }
 
@@ -62,4 +74,84 @@
     border-right: 2px solid red;
     border-radius: 5px;
     font-size: 1.6rem;
+}
+
+.navbar form {
+    display: flex;
+}
+
+.navbar input {
+    height: 50%;
+    margin: auto;
+    border-width: 0;
+}
+
+.navbar input[type="text"] {
+    width: 150px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.navbar input[type="submit"] {
+    width: 75px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.navbar input[type="submit"]:hover {
+    background: gray;
+}
+
+@media screen and (max-width: 1024px) {
+    .navbar {
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 7px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 5px 5px 0;
+    }
+
+    .navbar ul {
+        justify-content: center;
+    }
+    
+    .navbar form {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navbar-container {
+        height: auto;
+    }
+
+    .navbar {
+        padding: 20px 0 0;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li.logo-container, .navbar li.menu-container, .navbar a {
+        width: 200px;
+        height: 50px;
+    }
+
+    .menu:hover {
+        border: 2px solid red;
+        border-radius: 5px;
+        font-size: 1.6rem;
+    }
+
+    .navbar form {
+        display: none;
+    }
 }
