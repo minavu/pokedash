@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: green;
+    background-color: rgb(214, 214, 214);
 }
 
 .navbar-container {
@@ -112,7 +112,7 @@ body {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 890px) {
     .navbar {
         padding: 5px 5px 0;
     }
