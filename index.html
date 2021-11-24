@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokeDash</title>
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <script defer src="./js/navbar.js"></script>
   </head>
   <body>
-    <!-- <div class="site-container"> -->
+    <div class="background-image"></div>
 
+    <div class="site-content">
       <div class="navbar-container">
         <nav class="navbar">
+          <img src="./images/pokeball-icon.png" class="menu-icon" width="35" height="35" onclick="handleMenuIcon()"/>
           <ul>
             <li class="logo-container"><a href="./index.html" class="logo">Pokedash</a></li>
             <li class="menu-container"><a href="./index.html" class="menu">Dashboard</a></li>
@@ -24,10 +27,12 @@
           </form>
         </nav>
       </div>
-
+      
+      
       <main class="wrapper">
         <h1>PokeDash</h1>
       </main>
-    <!-- </div> -->
+    </div>
+    
   </body>
 </html>
