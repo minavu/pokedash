@@ -1,5 +1,10 @@
 
 let screen = document.querySelector(".pokedex-screen");
+let back = document.getElementById("back");
+let next = document.getElementById("next");
+let start = 0;
+let limit = 10;
+let end = start + limit;
 
 let addPokemonCard = (pokemon) => {
     let card = document.createElement("div");
@@ -15,15 +20,16 @@ let addPokemonCard = (pokemon) => {
     screen.append(card);
 }
 
-let loadPage = (id, limit) => {
-    for (; id <= limit; id+=1) {
+let loadPage = (start, end) => {
+    document.querySelectorAll(".pokemon-card").forEach(card => card.remove());
+    for (let id = start + 1; id <= end; id++) {
+        console.log(id, end);
         let pokeapi = `https://pokeapi.co/api/v2/pokemon/${id}`;
         let fetchData = async (pokeapi) => {
             try {
                 let response = await fetch(pokeapi);
                 let pokemon = await response.json();
                 addPokemonCard(pokemon);
-                console.log(pokemon);
             } catch(error) {
                 console.error(error);
             }
@@ -33,4 +39,13 @@ let loadPage = (id, limit) => {
 }
 
 
-loadPage(1, 10);
+loadPage(start, end);
+
+// back.onclick = () => {
+    //     loadPage(start-=10, limit);
+    // }
+    
+next.onclick = () => {
+    limit = (start + limit >= 898) ? 898 : limit + start;
+    loadPage(start+=10, limit);
+}
