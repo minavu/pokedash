@@ -48,27 +48,28 @@ let screen = document.querySelector(".pokedex-screen");
 let back = document.getElementById("back");
 let next = document.getElementById("next");
 let start = 0;
-let limit = 10;
+let limit = 12;
 let end = start + limit;
 
 let addPokemonCard = (pokemon) => {
     let card = document.createElement("div");
     let name = document.createElement("h3");
     let image = document.createElement("img");
-    card.setAttribute("class", "pokemon-card");
-
+    
     let {types: [type1, type2]} = pokemon;
     let {type: {name: type1_name}} = type1;
-
     let index1 = types_list.indexOf(`${type1_name}`);
-    card.style.backgroundColor = colors_list[index1];
-    
     if (type2) {
         let {type: {name: type2_name}} = type2;
         let index2 = types_list.indexOf(`${type2_name}`);
         card.style.background = `linear-gradient(${colors_list[index1]}, ${colors_list[index2]})`;
+    } else {
+        card.style.backgroundColor = colors_list[index1];
     }
-
+    
+    card.setAttribute("class", "pokemon-card");
+    
+    
     name.textContent = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
     image.setAttribute("class", "pokemon-image");
     image.setAttribute("src", pokemon.sprites.front_default);
@@ -111,24 +112,3 @@ next.onclick = () => {
     loadPage(start, end);
 }
 
-
-// let tablet_view = window.matchMedia('(max-width: 890px)');
-let handle_table_view = () => {
-    let tablet_view = window.matchMedia('(max-width: 890px)');
-    if (tablet_view.matches) {
-        console.log("matches");
-    } else {
-        console.log("No match");
-    }
-}
-window.addEventListener("resize", handle_table_view);
-// tablet_view.onchange = (viewport) => {
-//     if (viewport.matches) {
-//         console.log("tablet_screen viewport");
-//         document.querySelectorAll(".pokemon-card").forEach(card => card.remove());
-        
-//     } else {
-//         console.log("not tablet screen");
-
-//     }
-// }
