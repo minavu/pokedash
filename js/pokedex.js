@@ -44,7 +44,6 @@ const colors_list = [
     '#ea9999'
 ];
 
-
 let screen = document.querySelector(".pokedex-screen");
 let back = document.getElementById("back");
 let next = document.getElementById("next");
@@ -111,3 +110,25 @@ next.onclick = () => {
     end = (start + limit >= 898) ? 898 : start + limit;
     loadPage(start, end);
 }
+
+
+// let tablet_view = window.matchMedia('(max-width: 890px)');
+let handle_table_view = () => {
+    let tablet_view = window.matchMedia('(max-width: 890px)');
+    if (tablet_view.matches) {
+        console.log("matches");
+    } else {
+        console.log("No match");
+    }
+}
+window.addEventListener("resize", handle_table_view);
+// tablet_view.onchange = (viewport) => {
+//     if (viewport.matches) {
+//         console.log("tablet_screen viewport");
+//         document.querySelectorAll(".pokemon-card").forEach(card => card.remove());
+        
+//     } else {
+//         console.log("not tablet screen");
+
+//     }
+// }

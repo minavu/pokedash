@@ -18,7 +18,7 @@ h1 {
 }
 
 .pokedex-window {
-    width: 1024px;
+    width: 1000px;
     margin: auto;
     height: 80%;
     border-radius: 5px;
@@ -81,4 +81,30 @@ h1 {
 .pokemon-image {
     width: 100%;
     height: auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .pokedex-window {
+        width: 98%;
+    }
+
+    .control-window {
+        width: 100%;
+    }
+
+    .filler-window {
+        width: 69%;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .pokedex-screen {
+        grid-template-rows: repeat(2, 2fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
 }
