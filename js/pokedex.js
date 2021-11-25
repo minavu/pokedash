@@ -45,11 +45,35 @@ const colors_list = [
 ];
 
 let screen = document.querySelector(".pokedex-screen");
+let modal = document.getElementById("modal-window");
+let modal_screen = document.querySelector(".modal-screen");
+let close = document.getElementsByClassName("close")[0];
 let back = document.getElementById("back");
 let next = document.getElementById("next");
 let start = 0;
 let limit = 12;
 let end = start + limit;
+
+close.onclick = () => {
+    modal.style.display = "none";
+}
+
+let displayInfoModal = (pokemon) => {
+    document.querySelectorAll(".pokemon-modal").forEach(card => card.remove());
+    modal.style.display = "block";
+    let card = document.createElement("div");
+    let name = document.createElement("h3");
+    let image = document.createElement("img");
+
+    name.textContent = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+    image.setAttribute("class", "pokemon-modal-image");
+    image.setAttribute("src", pokemon.sprites.front_default);
+    image.setAttribute("alt", `image of ${pokemon.name}`);
+    card.append(name);
+    card.append(image);
+    card.setAttribute("class", "pokemon-modal");
+    modal_screen.append(card);
+}
 
 let addPokemonCard = (pokemon) => {
     let card = document.createElement("div");
@@ -67,9 +91,6 @@ let addPokemonCard = (pokemon) => {
         card.style.backgroundColor = colors_list[index1];
     }
     
-    card.setAttribute("class", "pokemon-card");
-    
-    
     name.textContent = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
     image.setAttribute("class", "pokemon-image");
     image.setAttribute("src", pokemon.sprites.front_default);
@@ -77,6 +98,11 @@ let addPokemonCard = (pokemon) => {
     card.append(name);
     card.append(image);
     screen.append(card);
+    
+    card.setAttribute("class", "pokemon-card");
+    card.onclick = () => {
+        displayInfoModal(pokemon);
+    }
 }
 
 let loadPage = (start, end) => {
