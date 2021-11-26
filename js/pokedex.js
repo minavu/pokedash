@@ -46,7 +46,7 @@ const colors_list = [
 
 let screen = document.querySelector(".pokedex-screen");
 let modal_screen = document.querySelector(".modal-screen");
-let close = document.getElementsByClassName("close")[0];
+let close = document.querySelector(".close");
 let back = document.getElementById("back");
 let next = document.getElementById("next");
 let start = 0;
@@ -174,9 +174,8 @@ let modalStats = (pokemon) => {
 
 let displayInfoModal = (pokemon) => {
     document.querySelectorAll(".pokemon-modal").forEach(card => card.remove());
-    modal_screen.style.display = "block";
-    // screen.style.overflow = "hidden";
-
+    modal_screen.style.removeProperty("background");
+    
     let {types: [type1, type2]} = pokemon;
     let {type: {name: type1_name}} = type1;
     let index1 = types_list.indexOf(`${type1_name}`);
@@ -187,10 +186,12 @@ let displayInfoModal = (pokemon) => {
     } else {
         modal_screen.style.backgroundColor = colors_list[index1];
     }
-
+    
     modalName(pokemon);
     modalImages(pokemon);
     modalStats(pokemon);
+
+    modal_screen.style.display = "block";
 }
 
 let addPokemonCard = (pokemon) => {
