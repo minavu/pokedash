@@ -56,23 +56,122 @@ let end = start + limit;
 
 close.onclick = () => {
     modal.style.display = "none";
+    screen.style.overflow = "auto";
+}
+
+let modalName = (pokemon) => {
+    let card = document.createElement("div");
+    let name = document.createElement("h3");
+    let pokemon_type1 = document.createElement("h3");
+    let pokemon_type2 = document.createElement("h3");
+    
+    let {types: [type1, type2]} = pokemon;
+    let {type: {name: type1_name}} = type1;
+    let type2_name;
+    if (type2) {
+        let {type: {name: type2_name_}} = type2;
+        if (type2_name_) type2_name = type2_name_;
+    }
+    
+    name.textContent = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+    pokemon_type1.textContent = type1_name;
+    pokemon_type2.textContent = type2_name;
+    card.append(name);
+    card.append(pokemon_type1);
+    card.append(pokemon_type2);
+    card.setAttribute("class", "pokemon-modal");
+    modal_screen.append(card);
+}
+
+let modalImages = (pokemon) => {
+    let card1 = document.createElement("div");
+    let card2 = document.createElement("div");
+    let image1 = document.createElement("img");
+    let image2 = document.createElement("img");
+    let image3 = document.createElement("img");
+    let image4 = document.createElement("img");
+
+    image1.setAttribute("class", "pokemon-modal-image");
+    image1.setAttribute("src", pokemon.sprites.front_default);
+    image1.setAttribute("alt", `image of ${pokemon.name}`);
+    image2.setAttribute("class", "pokemon-modal-image");
+    image2.setAttribute("src", pokemon.sprites.back_default);
+    image2.setAttribute("alt", `image of ${pokemon.name}`);
+    image3.setAttribute("class", "pokemon-modal-image");
+    image3.setAttribute("src", pokemon.sprites.front_shiny);
+    image3.setAttribute("alt", `image of ${pokemon.name}`);
+    image4.setAttribute("class", "pokemon-modal-image");
+    image4.setAttribute("src", pokemon.sprites.back_shiny);
+    image4.setAttribute("alt", `image of ${pokemon.name}`);
+    card1.append(image1);
+    card1.append(image2);
+    card2.append(image3);
+    card2.append(image4);
+    card1.setAttribute("class", "pokemon-modal");
+    card2.setAttribute("class", "pokemon-modal");
+    modal_screen.append(card1);
+    modal_screen.append(card2);
+}
+
+let modalStats = (pokemon) => {
+    let name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+    let {stats} = pokemon;
+    let [hp, attack, defense, specialAttack, specialDefense, speed] = stats;
+
+    let test = () => {
+        console.log(hp.stat.name, hp.base_stat);
+        console.log(attack.stat.name, attack.base_stat);
+        console.log(defense.stat.name, defense.base_stat);
+        console.log(specialAttack.stat.name, specialAttack.base_stat);
+        console.log(specialDefense.stat.name, specialDefense.base_stat);
+        console.log(speed.stat.name, speed.base_stat);
+    }
+    // test();
+    let canvas = document.createElement("canvas");
+    canvas.setAttribute("class", "pokemon-modal");
+    new Chart(canvas, {
+        type: 'radar',
+        options: {
+            scale: {
+                ticks: {
+                    min: 0,
+                    max: 100,
+                    stepSize: 20,
+                }
+            },
+            elements: {
+                line: {
+                    borderWidth: 3
+                }
+            },
+        },
+        data: {
+            labels: ['HP', 'Attack', 'Defense', 'Special Attack', 'Special Defense', 'Speed'],
+            datasets: [{
+                label: `Base Stats for ${name}`,
+                data: [hp.base_stat, attack.base_stat, defense.base_stat, specialAttack.base_stat, specialDefense.base_stat, speed.base_stat],
+                fill: true,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgb(255, 99, 132)',
+                pointBackgroundColor: 'rgb(255, 99, 132)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(255, 99, 132)'
+            }]
+        },
+    })
+    
+    modal_screen.append(canvas);
 }
 
 let displayInfoModal = (pokemon) => {
     document.querySelectorAll(".pokemon-modal").forEach(card => card.remove());
     modal.style.display = "block";
-    let card = document.createElement("div");
-    let name = document.createElement("h3");
-    let image = document.createElement("img");
+    screen.style.overflow = "hidden";
 
-    name.textContent = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
-    image.setAttribute("class", "pokemon-modal-image");
-    image.setAttribute("src", pokemon.sprites.front_default);
-    image.setAttribute("alt", `image of ${pokemon.name}`);
-    card.append(name);
-    card.append(image);
-    card.setAttribute("class", "pokemon-modal");
-    modal_screen.append(card);
+    modalName(pokemon);
+    modalImages(pokemon);
+    modalStats(pokemon);
 }
 
 let addPokemonCard = (pokemon) => {

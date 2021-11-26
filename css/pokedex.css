@@ -42,7 +42,7 @@ h1 {
     grid-template-rows: repeat(2, 2fr);
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    overflow: hidden;
+    overflow: auto;
     overflow-x: hidden;
     position: relative;
 }
@@ -70,7 +70,8 @@ h1 {
     margin: 1% 1%;
     padding: 20px;
     border: 1px solid #888;
-    height: 97%;
+    height: fit-content;
+    text-align: center;
 }
 
 .close {
@@ -131,6 +132,10 @@ h1 {
 .pokemon-image {
     width: 100%;
     height: auto;
+}
+
+.modal-info-card {
+    
 }
 
 @media screen and (max-width: 1024px) {
