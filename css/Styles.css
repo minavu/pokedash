@@ -7,7 +7,7 @@ html {
   }
   
 
-
+/*column class=image section 30%space utilization*/
   .column {
     float: left;
 	text-align: center;
@@ -16,7 +16,7 @@ html {
     padding: 0 8px;
 
   }
-
+/*columnT class= 70% text space utilization*/
   .columnT {
 	 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -30,7 +30,7 @@ html {
     padding: 20px;
     display: table;
   }
-  
+  /*card class= picture+ text layout*/
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
@@ -38,28 +38,22 @@ html {
 	border: 2px solid maroon;
     
   }
+  /* .photo class= photo properties*/
    .photo{
 	  width:97%;
 	  height:260px;
 	  text-align: center;
 	  
   }
-/*
-  .about-section {
-    padding: 50px;
-    text-align: center;
-    background-color: #474e5d;
-    color: white;
-  }
-  */
-  
+  /* overall layout*/
   .container {
     padding: 0 16px;
 	width : 100%;
     display: table;
 	margin-left:10%
   }
-  
+
+  /*  .containerT= container for text*/
   .containerT {
     padding: 0 16px;
     display: table;
@@ -92,33 +86,14 @@ html {
 	 color: #0A285F;
 	font-weight: bold; 
   }
-
-/*
-  .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .button:hover {
-    background-color: #555;
-  }
-  */
-  /*************************************************************************************/
-  
+   /*  .flip-card: card layout*/
   .flip-card {
   background-color: transparent;
  width:100%;
 	  height:260px;
   perspective: 1000px;
 }
-
+ /*  .flip-card-inner = inner layout*/
 .flip-card-inner {
   position: relative;
   width:100%;
@@ -151,10 +126,7 @@ html {
   color: white;
   transform: rotateY(180deg);
 }
-
-/*************************************************************************************/
-  
-  
+   
   @media screen and (max-width: 650px) {
     .column {
       width: 100%;
