@@ -10,8 +10,25 @@
     <script defer src="./js/navbar.js"></script>
   </head>
   <body>
-<p>testing dashboard page 
-    
-</p>
+    <div class="background-image"></div>
+
+    <div class="site-content">
+      <div class="navbar-container">
+        <nav class="navbar">
+          <img src="./images/pokeball-icon.png" class="menu-icon" width="35" height="35" onclick="handleMenuIcon()"/>
+          <ul>
+            <li class="logo-container"><a href="./index.html" class="logo">Pokedash</a></li>
+            <li class="menu-container"><a href="./dashboard.html" class="menu">Dashboard</a></li>
+            <li class="menu-container"><a href="./pokedex.html" class="menu">Pokedex</a></li>
+            <li class="menu-container"><a href="./developers.html" class="menu">Developers</a></li>
+            
+          </ul>
+          <form>
+            <input type="text" title="Search Bar" placeholder="Search Pokemon"/>
+            <input type="submit" value="Search"/>
+          </form>
+        </nav>
+      </div>
+
   </body>
   </html>
