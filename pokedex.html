@@ -3,17 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PokeDash</title>
-    <link rel="stylesheet" href="css/reset.css" />
+    <title>PokeDash: Pokedex</title>
+    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/pokedex.css" />
     <script defer src="./js/navbar.js"></script>
+    <script defer src="./js/pokedex.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   </head>
   <body>
     <div class="background-image"></div>
+
     <div class="site-content">
       <div class="navbar-container">
         <nav class="navbar">
-          <img src="./images/pokeball-icon.png" class="menu-icon" width="35" height="35" onclick="handleMenuIcon()"/>
+          <img src="./images/pokeball-icon.png" class="menu-icon" width="35" height="35" onclick="handleMenuIcon()" alt="Pokeball Menu Icon"/>
           <ul>
             <li class="logo-container"><a href="./index.html" class="logo">Pokedash</a></li>
             <li class="menu-container"><a href="./index.html" class="menu">Dashboard</a></li>
@@ -29,9 +33,38 @@
       
       
       <main class="wrapper">
-        <h1>PokeDash</h1>
+        <!-- <h1>Pokedex</h1>
+        <section class="pokedex-window">
+          <section class="pokedex-screen">
+            <div id="modal-window" class="modal-window">
+              <div class="modal-screen">
+                <span class="close">&times;</span>
+              </div>
+            </div>
+          </section>
+        </section> -->
+        <h1>Pokedex</h1>
+        <section class="pokedex-window">
+          <section class="pokedex-screen"></section>
+
+          <div class="modal-screen">
+            <span class="close">&times;</span>
+          </div>
+        </section>
+        <!-- <div id="modal-window" class="modal-window"> -->
+        <!-- </div> -->
+
+        <section class="filler-window"></section>
+
+        <section class="control-window">
+          <section class="control-screen">
+            <button class="control-btn" id="back">back</button>
+            <button class="control-btn" id="next">next</button>
+          </section>
+        </section>
       </main>
     </div>
-
+    <!-- THIS IS TO CHECK MERGING -->
+    
   </body>
 </html>
