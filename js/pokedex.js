@@ -45,7 +45,6 @@ const colors_list = [
 ];
 
 let screen = document.querySelector(".pokedex-screen");
-let modal = document.getElementById("modal-window");
 let modal_screen = document.querySelector(".modal-screen");
 let close = document.getElementsByClassName("close")[0];
 let back = document.getElementById("back");
@@ -55,15 +54,16 @@ let limit = 12;
 let end = start + limit;
 
 close.onclick = () => {
-    modal.style.display = "none";
+    modal_screen.style.display = "none";
     screen.style.overflow = "auto";
 }
 
 let modalName = (pokemon) => {
     let card = document.createElement("div");
     let name = document.createElement("h3");
-    let pokemon_type1 = document.createElement("h3");
-    let pokemon_type2 = document.createElement("h3");
+    let types_heading = document.createElement("h5");
+    let pokemon_type1 = document.createElement("h5");
+    let pokemon_type2 = document.createElement("h5");
     
     let {types: [type1, type2]} = pokemon;
     let {type: {name: type1_name}} = type1;
@@ -74,9 +74,12 @@ let modalName = (pokemon) => {
     }
     
     name.textContent = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+    types_heading.textContent = "TYPES";
+    types_heading.style.textDecoration = "underline";
     pokemon_type1.textContent = type1_name;
     pokemon_type2.textContent = type2_name;
     card.append(name);
+    card.append(types_heading);
     card.append(pokemon_type1);
     card.append(pokemon_type2);
     card.setAttribute("class", "pokemon-modal");
@@ -127,8 +130,11 @@ let modalStats = (pokemon) => {
         console.log(speed.stat.name, speed.base_stat);
     }
     // test();
+    let card = document.createElement("div");
     let canvas = document.createElement("canvas");
-    canvas.setAttribute("class", "pokemon-modal");
+    canvas.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+    canvas.style.padding = "20px";
+    
     new Chart(canvas, {
         type: 'radar',
         options: {
@@ -161,13 +167,26 @@ let modalStats = (pokemon) => {
         },
     })
     
-    modal_screen.append(canvas);
+    card.append(canvas);
+    card.setAttribute("class", "pokemon-modal");
+    modal_screen.append(card);
 }
 
 let displayInfoModal = (pokemon) => {
     document.querySelectorAll(".pokemon-modal").forEach(card => card.remove());
-    modal.style.display = "block";
-    screen.style.overflow = "hidden";
+    modal_screen.style.display = "block";
+    // screen.style.overflow = "hidden";
+
+    let {types: [type1, type2]} = pokemon;
+    let {type: {name: type1_name}} = type1;
+    let index1 = types_list.indexOf(`${type1_name}`);
+    if (type2) {
+        let {type: {name: type2_name}} = type2;
+        let index2 = types_list.indexOf(`${type2_name}`);
+        modal_screen.style.background = `linear-gradient(${colors_list[index1]}, ${colors_list[index2]})`;
+    } else {
+        modal_screen.style.backgroundColor = colors_list[index1];
+    }
 
     modalName(pokemon);
     modalImages(pokemon);
