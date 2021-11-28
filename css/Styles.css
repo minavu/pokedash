@@ -1,135 +1,160 @@
 html {
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
+  box-sizing: border-box;
 
-/*column class=image section 30%space utilization*/
-  .column {
-    float: left;
-	text-align: center;
-    width: 30%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-
-  }
-/*columnT class= 70% text space utilization*/
-  .columnT {
-	 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background-color: silver;
-    float: left;
-    width: 70%;
-    height:265px;
-	margin-top: 8px;
-  	margin-bottom: 8px;
-	border: 2px solid maroon;
-    padding: 20px;
-    display: table;
-  }
-  /*card class= picture+ text layout*/
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 8px;
-    background-color:maroon;
-	border: 2px solid maroon;
-    
-  }
-  /* .photo class= photo properties*/
-   .photo{
-	  width:97%;
-	  height:260px;
-	  text-align: center;
-	  
-  }
-  /* overall layout*/
-  .container {
-    padding: 0 16px;
-	width : 100%;
-    display: table;
-	margin-left:10%
-  }
-
-  /*  .containerT= container for text*/
-  .containerT {
-    padding: 0 16px;
-    display: table;
-  }
-  
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .myName {
-    color: Maroon;
-	font: 20px Arial, sans-serif;
-	font-weight: bold;
-	
-  }
-  
-  .title {
-    color: DarkSlateBlue;
-	font-weight: bold;
-  }
-  
-  .emailid {
-    color: DarkSlateBlue;
-	font-weight: bold;
-  }
-  
-  .aboutMe{
-	 color: #0A285F;
-	font-weight: bold; 
-  }
-   /*  .flip-card: card layout*/
-  .flip-card {
-  background-color: transparent;
- width:100%;
-	  height:260px;
-  perspective: 1000px;
 }
- /*  .flip-card-inner = inner layout*/
-.flip-card-inner {
-  position: relative;
-  width:100%;
-	  height:260px;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+.container {
+ margin-top: 3%;
+  padding: 0 16px;
+/* width : 100vh;  */
+  display: table;
+margin-left:2%;
+}
+
+
+.containerT {
+  padding: 0 16px;
+  display: table;
+}
+
+.row {
+ 
+  display: flex;
+  flex-wrap: wrap;
+  min-width:475px; 
+  padding: 0 4px;
+}
+
+.column {
+  float: left;
+text-align: center;
+  width: 30%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+
+}
+
+
+.columnT {
+ 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: silver;
+  float: left;
+  width: 70%;
+  height:260px;
+margin-top: 8px;
+  margin-bottom: 8px;
+border: 2px solid maroon;
+  padding: 20px;
+  display: table;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  background-color:maroon;
+border: 2px solid maroon;
+  
+}
+ .photo{
+  width:97%;
+height:260px;  
+  max-height: 260px;
+  text-align: center;
+  
+}
+
+
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+  flex-wrap: wrap;
+}
+
+.myName {
+  color: Maroon;
+font: 20px Arial, sans-serif;
+font-weight: bold;
+
+}
+
+.title {
+  color: DarkSlateBlue;
+font-weight: bold;
+}
+
+.emailid {
+  color: DarkSlateBlue;
+font-weight: bold;
+}
+
+.aboutMe{
+ color: Sienna;
+font-weight: bold; 
+}
+
+
+.flip-card {
+background-color: transparent;
+ background-color:maroon;
+width:100%;
+height:260px; 
+max-height :260px;
+perspective: 1000px;
+}
+
+.flip-card-inner {
+position: relative;
+width:100%;
+height:260px; 
+max-height :260px;
+text-align: center;
+transition: transform 0.6s;
+transform-style: preserve-3d;
+
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+transform: rotateY(180deg);
 }
 
 .flip-card-front,
 .flip-card-back {
-  position: absolute;
-   width:100%;
-	height:260px;
-  backface-visibility: hidden;
+position: absolute;
+ width:100%;
+height:260px; 
+max-height :260px;
+backface-visibility: hidden;
 }
 
 .flip-card-front {
-  background-color: maroon;
-  color: black;
+background-color: maroon;
+color: black;
 }
 
 .flip-card-back {
-  background-color: maroon;
-  color: white;
-  transform: rotateY(180deg);
+background-color: maroon;
+color: white;
+transform: rotateY(180deg);
 }
-   
-  @media screen and (max-width: 650px) {
-    .column {
-      width: 100%;
-      display: block;
-    }
+
+/*************************************************************************************/
+
+
+@media screen and (max-width: 475px) {
+  .column {
+   width: auto; height: auto;
+   display: block;
   }
+
+
+}
