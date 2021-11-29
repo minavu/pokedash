@@ -9,7 +9,6 @@ let handleMenuIcon = () => {
         }
     })
 }
-<<<<<<< HEAD
 let displayMenu = () => {
     let items = document.querySelectorAll(".menu-container");
     items.forEach(item => {
@@ -27,6 +26,4 @@ let displayMenu = () => {
    })
 }
 
-=======
->>>>>>> searchbar
 
