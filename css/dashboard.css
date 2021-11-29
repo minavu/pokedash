@@ -1,1 +1,67 @@
 /*This is css for DASHBOARD*/
+@font-face {
+    font-family: poketype;
+    src: url(../font/Pokemon\ Font.ttf);
+}
+
+.wrapper {
+    width: 100%;
+    background-color: rgb(197, 195, 193, 0.8);
+    border-radius: 10px;
+    padding-top: 70px;
+    height: 100%;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.7rem;
+    font-family: pokefont, sans-serif;
+    letter-spacing: 3px;
+    color: #FFCC01;
+    -webkit-text-stroke: 3px #355FAC;
+    text-shadow: -1px -1px 0 #355FAC, 1px -1px 0 #355FAC, -1px 1px 0 #355FAC, 1px 1px 0 #355FAC;
+    margin: 20px 10px 5px 10px;
+}
+
+.intro {
+    width: 90%;
+    margin: auto;
+    background-color: beige;
+    min-height: 420px;
+    height: fit-content;
+    padding: 10px;
+}
+
+.welcome-image-full, .welcome-image-half {
+    float: left;
+    padding: 10px 20px;
+}
+
+.welcome-image-half {
+    display: none;
+}
+
+.welcome-message {
+    margin: 10px 20px;
+    /* padding: 10px; */
+    align-self: center;
+    font-family: poketype, Courier, monospace;
+    line-height: 1.6rem;
+}
+
+@media only screen and (max-width: 500px) {
+    .welcome-image-full {
+        display: none;
+    }
+
+    .welcome-image-half {
+        display: inline-block;
+    }
+
+    .welcome-message {
+        font-size: 0.8rem;
+    }
+}
