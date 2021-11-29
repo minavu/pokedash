@@ -27,7 +27,7 @@ h1 {
 }
 
 .intro {
-    width: 90%;
+    width: 80%;
     margin: auto;
     background-color: beige;
     min-height: 420px;
@@ -52,7 +52,17 @@ h1 {
     line-height: 1.6rem;
 }
 
+@media screen and (max-width: 890px) {
+    .intro {
+        width: 90%;
+    }
+}
+
 @media only screen and (max-width: 500px) {
+    .intro {
+        width: 100%;
+    }
+
     .welcome-image-full {
         display: none;
     }
