@@ -5,6 +5,7 @@ let handleMenuIcon = () => {
             item.removeAttribute("style");
         } else {
             item.style.display = "block";
+            item.style.zIndex = "9";
         }
     })
 }
