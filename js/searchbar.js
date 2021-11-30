@@ -70,12 +70,12 @@ let fetchPokemon = (pokemon_name) => {
 }
 
 let displaySuccess = (pokemon) => {
-    // console.log("success");
     let search_window = document.createElement("div");
     search_window.setAttribute("class", "search_window");
 
-
     let search_modal = document.createElement("div");
+    search_modal.setAttribute("class", "search_modal");
+
     let close_search = document.createElement("span");
     close_search.setAttribute("class", "close_search");
     close_search.innerHTML = "&times;";
@@ -83,7 +83,6 @@ let displaySuccess = (pokemon) => {
         search_window.remove();
     }
     search_modal.append(close_search);
-    search_modal.setAttribute("class", "search_modal");
     search_modal.style.removeProperty("background");
 
     let name = document.createElement("h3");
@@ -105,11 +104,6 @@ let displaySuccess = (pokemon) => {
         search_modal.style.backgroundColor = searchbar_colors_list[index1];
     }
 
-    
-
-
-
-    
     let pokemon_name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
     name.textContent = pokemon_name;
     types_heading.textContent = "TYPES";
@@ -191,15 +185,16 @@ let displaySuccess = (pokemon) => {
     search_modal.append(card);
 
     search_window.append(search_modal);
-    
-    // body.append(search_modal);
     body.append(search_window);
 }
 
 let displayFailure = (error) => {
-    console.error(error);
     let search_window = document.createElement("div");
+    search_window.setAttribute("class", "search_window");
+
     let search_modal = document.createElement("div");
+    search_modal.setAttribute("class", "search_modal");
+
     let close_search = document.createElement("span");
     close_search.setAttribute("class", "close_search");
     close_search.innerHTML = "&times;";
@@ -207,7 +202,6 @@ let displayFailure = (error) => {
         search_window.remove();
     }
     search_modal.append(close_search);
-    search_modal.setAttribute("class", "search_modal");
 
     let message = document.createElement("h3");
     message.innerHTML = "Error when searching for pokemon.<br>Please check your input for correctness.";
