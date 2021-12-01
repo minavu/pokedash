@@ -7,7 +7,11 @@ html {
   box-sizing: inherit;
 }
 
+#container{
+width: 100%;
+height: 100%;
 
+}
 
 .container {
   margin-top: 3%;
@@ -138,7 +142,7 @@ html {
 }
 
 .aboutMe{
-  color: Sienna;
+  color: #581845;
   font-weight: bold; 
 }
 

@@ -28,11 +28,12 @@ h1 {
 }
 
 .intro, .info {
-    width: 80%;
+    width: 90%;
+	height:auto;
     margin: auto;
     background-color: beige;
-    min-height: 420px;
-    height: fit-content;
+    /*min-height: 420px;
+    */height: fit-content;
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -52,6 +53,13 @@ h1 {
     align-self: center;
     font-family: poketype, Courier, monospace;
     line-height: 1.6rem;
+}
+
+.donutChart
+{
+	width:100%;
+	height:auto;
+    
 }
 
 @media screen and (max-width: 890px) {
