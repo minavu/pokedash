@@ -32,10 +32,13 @@ h1 {
 	height:auto;
     margin: auto;
     background-color: beige;
-    /*min-height: 420px;
-    */height: fit-content;
+    height: fit-content;
     padding: 10px;
     margin-bottom: 20px;
+}
+
+.intro {
+    min-height: 420px;
 }
 
 .welcome-image-full, .welcome-image-half {
