@@ -190,4 +190,9 @@ img.pokemon-modal-image {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
+    .wrapper {
+		padding-left: 5px;
+		padding-top: 200px;
+	}
+    
 }
