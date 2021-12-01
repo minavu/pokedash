@@ -60,8 +60,8 @@ new Chart("myChart", {
   },
   options: {
     legend: {
-        display: false, 
-        position: "left"
+        display: true, 
+        position: "right"
        },
     title: {
       display: false,
