@@ -177,6 +177,8 @@ positioned to the right in the navbar.  The menu is now centered and stacks up. 
 @media screen and (max-width: 500px) {
     .navbar-container {
         height: auto;
+        position: relative;
+        /* z-index: 9; */
     }
 
     .navbar {
@@ -202,6 +204,7 @@ positioned to the right in the navbar.  The menu is now centered and stacks up. 
 
     .navbar li.menu-container {
         display: none;
+        /* position: relative; */
     }
 
     .menu:hover {
