@@ -11,23 +11,28 @@
     <link rel="stylesheet" href="./css/Styles.css" />
     
     <script defer src="./js/navbar.js"></script>
-    <script defer src="./js/index.js"></script>
     <script defer src="./js/searchbar.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   </head>
   <body>
+    <!-- This is the background image for the entire site.  It is a picture of professor Oak's lab. -->
     <div class="background-image"></div>
 
+    <!-- This is the content of the site and will be placed on top of the background image above. -->
     <div class="site-content">
+      <!-- This section is the navbar for the site.  The navbar container stretches the entire width of the screen. -->
       <div class="navbar-container">
         <nav class="navbar">
+          <!-- The pokeball icon is used in place of the hamburger to open the menu in mobile view. -->
           <img src="./images/pokeball-icon.png" class="menu-icon" width="35" height="35" onclick="handleMenuIcon()" alt="pokeimg"/>
           <ul>
+            <!-- This logo class item is meant to be a clickable log to take users to the landing page of the site. -->
             <li class="logo-container"><a href="./index.html" class="logo">Pokedash</a>   </li>
             <li class="menu-container"><a href="./dashboard.html" class="menu">Dashboard</a></li>
             <li class="menu-container"><a href="./pokedex.html" class="menu">Pokedex</a></li>
             <li class="menu-container"><a href="./developers.html" class="menu">Developers</a></li>
           </ul>
+          <!-- This is the search bar to search for individual pokemon. -->
           <form>
             <input type="text" title="Search Bar" placeholder="Search Pokemon"/>
             <input type="submit" value="Search"/>
@@ -35,7 +40,7 @@
         </nav>
       </div>
       
-      
+      <!-- This is the rest of the content of the page. -->
       <main class="wrapper"> 
        <div class="lab"  style="margin-top: 250px;" >
         <h1>Welcome to Pokemon Cinnabar Laboratory</h1>

@@ -1,3 +1,5 @@
+// This is a function to handle the menu icon when user clicks the pokeball.  The menu items are displayed if hidden
+// and disappears if shown.
 let handleMenuIcon = () => {
     let items = document.querySelectorAll(".menu-container");
     items.forEach(item => {
@@ -9,6 +11,7 @@ let handleMenuIcon = () => {
         }
     })
 }
+
 let displayMenu = () => {
     let items = document.querySelectorAll(".menu-container");
     items.forEach(item => {
