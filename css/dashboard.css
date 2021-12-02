@@ -9,7 +9,6 @@ it look and feel easthetically similar to the pokemon experience. */
 .wrapper {
     width: 100%;
     background-color: rgb(197, 195, 193, 0.8);
-    border-radius: 10px;
     padding-top: 70px;
     height: 100%;
     padding-bottom: 40px;
@@ -83,6 +82,14 @@ h1 {
 
 /* Media query for the mobile view.  The full body image of professor Oak is replaced with his half body image. */
 @media only screen and (max-width: 500px) {
+    .wrapper {
+        border-radius: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 70px;
+    }
+    
     .intro {
         width: 100%;
     }

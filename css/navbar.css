@@ -28,6 +28,7 @@ the screen.  It also has a blur as to not be distracting to the content on top. 
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: auto;
 }
 
 /* The navbar container has a linear gradient background with a backup color of black.  It is fixed height and
@@ -82,6 +83,10 @@ The display is flex to easily position the children elements. */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.navbar a.logo {
+    cursor: default;
 }
 
 /* Designing the logo to look like the actual pokemon logo. */
@@ -177,6 +182,8 @@ positioned to the right in the navbar.  The menu is now centered and stacks up. 
 @media screen and (max-width: 500px) {
     .navbar-container {
         height: auto;
+        position: relative;
+        z-index: 9;
     }
 
     .navbar {
@@ -202,6 +209,7 @@ positioned to the right in the navbar.  The menu is now centered and stacks up. 
 
     .navbar li.menu-container {
         display: none;
+        /* position: relative; */
     }
 
     .menu:hover {

@@ -1,3 +1,15 @@
+/* Styling the page similar to the pokedex page for consistency. */
+.wrapper {
+  width: 100%;
+  background-color: rgb(197, 195, 193, 0.8);
+  padding-top: 70px;
+  height: 100%;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: auto;
+}
+
 /* general layout sizing*/
 html {
   box-sizing: border-box;

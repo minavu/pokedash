@@ -270,6 +270,24 @@ let loadPage = (start, end) => {
 
 // Here we call the load function when the pokedex page is loaded.
 loadPage(start, end);
+// let card1 = document.createElement("div");
+// let card2 = document.createElement("div");
+// let card3 = document.createElement("div");
+// let card4 = document.createElement("div");
+// card1.style.backgroundColor = "black";
+// card2.style.backgroundColor = "black";
+// card3.style.backgroundColor = "black";
+// card4.style.backgroundColor = "black";
+// screen.append(card1);
+// screen.append(card2);
+// screen.append(card3);
+// screen.append(card4);
+// let testname = document.createElement("h3");
+// testname.textContent = "TESTING";
+// testname.style.color = "white";
+// testname.style.textAlign = "center";
+// testname.style.fontSize = "2.5rem";
+// card1.append(testname);
 
 // This is the function to load the previous set of pokemons.  Nothing will be loaded if starting id is 0.
 back.onclick = () => {
