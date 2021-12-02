@@ -27,6 +27,7 @@ h1 {
     margin: 20px 10px 5px 10px;
 }
 
+/*properties for introduction*/
 .intro, .info {
     width: 90%;
 	height:auto;
@@ -40,7 +41,7 @@ h1 {
 .intro {
     min-height: 420px;
 }
-
+/*properties for images in introduction*/
 .welcome-image-full, .welcome-image-half {
     float: left;
     padding: 10px 20px;
@@ -49,7 +50,7 @@ h1 {
 .welcome-image-half {
     display: none;
 }
-
+/*properties for introduction displayed text */
 .welcome-message {
     margin: 10px 20px;
     /* padding: 10px; */
@@ -58,6 +59,8 @@ h1 {
     line-height: 1.6rem;
 }
 
+/*properties for dashboard donutchart*/
+
 .donutChart
 {
 	width:100%;
@@ -65,6 +68,7 @@ h1 {
    max-width: 800px;
 }
 
+/*properties for screen responsiveness*/
 @media screen and (max-width: 890px) {
     .intro {
         width: 90%;

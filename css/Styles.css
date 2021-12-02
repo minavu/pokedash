@@ -1,18 +1,22 @@
+/* general layout sizing*/
 html {
   box-sizing: border-box;
 
 }
 
+/* page layouts based on window size*/
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
+/* setting style properties for the container  */
 #container{
 width: 100%;
 height: 100%;
 
 }
 
+/* defined container as a class used in div tags */
 .container {
   margin-top: 3%;
   padding: 0 16px;
@@ -21,12 +25,13 @@ height: 100%;
   margin-left:2%;
 }
 
-
+/*  .containerT= container for text properties*/
 .containerT {
   padding: 0 16px;
   display: table;
 }
 
+/*  setting row properties to build table using div tags to display the content*/
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -37,6 +42,7 @@ height: 100%;
 
 }
 
+/*column class=image section 30%space utilization for each row*/
 .column {
   float: left;
   text-align: center;
@@ -45,7 +51,7 @@ height: 100%;
   padding: 0 8px;
 }
 
-
+/*columnT class= 70% text space utilization for each row*/
 .columnT {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: silver;
@@ -59,6 +65,7 @@ height: 100%;
   display: table;
 }
 
+/*card class used to set overall layout to display images & text*/
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
@@ -66,6 +73,8 @@ height: 100%;
   border: 2px solid maroon;
   
 }
+
+/* .photo class= photo properties*/
  .photo{
   width:97%;
   height:260px;  
@@ -74,6 +83,7 @@ height: 100%;
   
 }
 
+/* .pokeCount = to display number of pokemons in the dashboard page*/
 .pokeCount
 {
 	float: left;
@@ -83,6 +93,7 @@ height: 100%;
 	padding: 0 8px;
 }
 
+ 
 .pokeList
 {
 	float: left;
@@ -90,8 +101,11 @@ height: 100%;
 	width: 70%;
 	margin-bottom: 16px;
 	padding: 0 8px;
+  
 	
 }
+
+/* welcome message on dashboard=professor oka*/
 .welcome-message {
     margin: 10px 20px;
     /* padding: 10px; */
@@ -100,6 +114,7 @@ height: 100%;
     font-family: poketype, Courier, monospace;
     line-height: 1.6rem;
 }
+
 
 .boxGraph
 {
@@ -118,35 +133,37 @@ height: 100%;
   position: relative;
 }
 
+/*  adjusting the layout based on window size*/
 .container::after, .row::after {
   content: "";
   clear: both;
   display: table;
   flex-wrap: wrap;
 }
-
+/*  font style for developers name*/
 .myName {
   color: Maroon;
   font: 20px Arial, sans-serif;
   font-weight: bold;
 }
-
+/*  font size for developers title*/
 .title {
   color: DarkSlateBlue;
   font-weight: bold;
 }
 
+/*  font size for developers emailid*/
 .emailid {
   color: DarkSlateBlue;
   font-weight: bold;
 }
-
+/*  font size for about developers */
 .aboutMe{
   color: #581845;
   font-weight: bold; 
 }
 
-
+/*  .flip-card: card layout*/
 .flip-card {
   background-color: transparent;
   background-color:maroon;
@@ -155,7 +172,9 @@ height: 100%;
   max-height :260px;  
   perspective: 1000px;
 }
+/* fliping of the  picture properties are below*/
 
+/*  .flip-card-inner = inner layout*/
 .flip-card-inner {
   position: relative;
   width:100%;  
@@ -192,6 +211,7 @@ height: 100%;
 }
 
 /*************************************************************************************/
+/*below are screen sizing responsive properties*/
 @media screen and (max-width: 800px) {
 	.boxGraph
 	{
