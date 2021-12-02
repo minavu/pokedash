@@ -1,3 +1,4 @@
+// This is an array containing all the types of pokemon.
 const searchbar_types_list = [
 	'normal',
 	'fighting',
@@ -21,6 +22,7 @@ const searchbar_types_list = [
     'shadow'
 ];
 
+// This is an array containing the colors to represent the types of pokemon in the corresponding array above.
 const searchbar_colors_list = [
 	'#F5F5F5',
 	'#E6E0D4',
@@ -44,8 +46,14 @@ const searchbar_colors_list = [
     '#ea9999'
 ];
 
+// Querying the document selectors for later use.
 let body = document.querySelector("main");
 let submit = document.querySelector("input[type=submit]");
+
+// The onclick function for the submit button.  It prevents the default behavior of the input type.  Then it
+// queries all elements with class "search_window" to remove and clear out the page.  It then grabs the user input
+// and calls the fetch pokemon function with that as parameter.  It should then clear out the text field to an empty
+// string but this doesn't seem to work for some reason.
 submit.onclick = (event) => {
     event.preventDefault();
     document.querySelectorAll(".search_window").forEach(x => x.remove());
@@ -54,6 +62,9 @@ submit.onclick = (event) => {
     input.value = ""
 }
 
+// This is teh fetch pokemon function that takes a pokemon name inputted by the user.  It adds that name to the url
+// and calls the fetch api with async and await.  Inside the try/catch block, it will call the displaySuccess
+// function is the fetch is good and call the displayFailure function is the fetch is bad.
 let fetchPokemon = (pokemon_name) => {
     let pokeapi = `https://pokeapi.co/api/v2/pokemon/${pokemon_name}`;
     let fetchData = async (pokeapi) => {
@@ -69,7 +80,14 @@ let fetchPokemon = (pokemon_name) => {
     fetchData(pokeapi);
 }
 
+// This is the function to display the search modal upon successive fetch call.  It is a bit long because I didn't 
+// split it into smaller functions like I did for the pokedex.  Therefore, I will comment inside the function below.
 let displaySuccess = (pokemon) => {
+    // First, we create a container div with class name "search_window".  This will be used to position the pop up
+    // search correctly on the screen.  Then, we create a container div with class name "search_modal" to hold all 
+    // pokemon information.  Next, we create a span element to contain the close button for the search modal and give
+    // it the proper class name for styling.  The innerHTML is an X for simplicity, and it removes the search window
+    // on click.  This button gets added to the search modal.  We remove the background property in case one is set.
     let search_window = document.createElement("div");
     search_window.setAttribute("class", "search_window");
 
@@ -85,6 +103,10 @@ let displaySuccess = (pokemon) => {
     search_modal.append(close_search);
     search_modal.style.removeProperty("background");
 
+    // In this section, we first create the name element and the types element to hold the heading and the types.
+    // We destructure the pokemon json for the types and use the indexOf function in conjunction with the constant
+    // type and colors arrays above to color the background according to the number of types the pokemon possesses.
+    // We capitalize the name and update the content of the created elements.  Then we add to the search modal.
     let name = document.createElement("h3");
     let types_heading = document.createElement("h5");
     let pokemon_type1 = document.createElement("h5");
@@ -116,6 +138,8 @@ let displaySuccess = (pokemon) => {
     search_modal.append(pokemon_type1);
     search_modal.append(pokemon_type2);
 
+    // This section creates a card for the images and the associated elements to be used.  We set the image attributes
+    // for all 4 images and append to the card then added to the search modal.
     let card1 = document.createElement("div");
     let image1 = document.createElement("img");
     let image2 = document.createElement("img");
@@ -141,6 +165,9 @@ let displaySuccess = (pokemon) => {
     card1.setAttribute("class", "pokemon-modal");
     search_modal.append(card1);
 
+    // The following section destructures the stats of the pokemon and further destructure the array contents.  A
+    // div is created to contain the canvas which is created to contain the chart.  The radar chart depicts the 
+    // stats of the pokemon.  This is then added to the search modal.
     let {stats} = pokemon;
     let [hp, attack, defense, specialAttack, specialDefense, speed] = stats;
 
@@ -184,10 +211,17 @@ let displaySuccess = (pokemon) => {
     card.append(canvas);
     search_modal.append(card);
 
+    // The search modal gets added to the search window which in turn gets added to the body of the html page.
     search_window.append(search_modal);
     body.append(search_window);
 }
 
+// This is the function to be displayed when the user misspells the name of a pokemon or searches for a pokemon
+// that doesn't exist.  Similar to the display success beginning actions, the function must first create the search
+// window div container and name it with the appropriate class name.  It creates the search modal div container for
+// the info elements inside.  It also creates the close search button with the appropriate class name, inner content,
+// and on click function to remove the window.  It will the add the error message to the search modal and append all
+// of that to the search windown and then add that to the body of the page.
 let displayFailure = (error) => {
     let search_window = document.createElement("div");
     search_window.setAttribute("class", "search_window");
