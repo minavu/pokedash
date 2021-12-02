@@ -9,7 +9,6 @@ it look and feel easthetically similar to the pokemon experience. */
 .wrapper {
     width: 100%;
     background-color: rgb(197, 195, 193, 0.8);
-    border-radius: 10px;
     padding-top: 70px;
     height: 100%;
     padding-bottom: 40px;

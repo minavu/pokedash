@@ -4,7 +4,6 @@ and a border radius.  The background color is a shade of gray with transparency 
 .wrapper {
     width: 100%;
     background-color: rgb(197, 195, 193, 0.8);
-    border-radius: 10px;
     padding-top: 70px;
     height: 100%;
     padding-bottom: 40px;
