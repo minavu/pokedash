@@ -85,6 +85,10 @@ The display is flex to easily position the children elements. */
     align-items: center;
 }
 
+.navbar a.logo {
+    cursor: default;
+}
+
 /* Designing the logo to look like the actual pokemon logo. */
 .navbar .logo {
     width: 100%;
