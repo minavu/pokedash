@@ -28,6 +28,7 @@ the screen.  It also has a blur as to not be distracting to the content on top. 
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: auto;
 }
 
 /* The navbar container has a linear gradient background with a backup color of black.  It is fixed height and
@@ -178,7 +179,7 @@ positioned to the right in the navbar.  The menu is now centered and stacks up. 
     .navbar-container {
         height: auto;
         position: relative;
-        /* z-index: 9; */
+        z-index: 9;
     }
 
     .navbar {

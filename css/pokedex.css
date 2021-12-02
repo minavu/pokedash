@@ -27,8 +27,8 @@ h1 {
 }
 
 /* These are the pokemon names inside the pokemon cards created dynamically using JS. */
-h3 {
-    font-size: 2rem;
+.pokemon-card h3 {
+    font-size: 1.5rem;
     padding: 20px;
 }
 
@@ -63,7 +63,7 @@ The position is absolute to the parent container. */
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     overflow: auto;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     position: absolute;
 }
 
@@ -213,6 +213,11 @@ turns into a tablet easthetic.  Border radii are adjusted to create a unison loo
         width: 100%;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+        align-items: flex-start;
+    }
+
+    .control-screen {
+        padding: 0;
     }
     
     .filler-window {
@@ -220,16 +225,27 @@ turns into a tablet easthetic.  Border radii are adjusted to create a unison loo
     }
 }
 
-/* Media query for the mobile view.  Grid contains on 2 columns */
+/* Media query for the large mobile view.  Grid contains on 2 columns */
+@media screen and (max-width: 650px) {
+    .pokedex-screen {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media query for the mobile view.  Grid contains on 1 columns */
 @media screen and (max-width: 500px) {
     .pokedex-screen {
         grid-template-rows: repeat(2, 2fr);
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 10px;
     }
 
     .wrapper {
-		padding-top: 10px;
+        border-radius: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 70px;
 	}
     
 }

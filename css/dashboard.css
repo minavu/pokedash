@@ -84,7 +84,11 @@ h1 {
 /* Media query for the mobile view.  The full body image of professor Oak is replaced with his half body image. */
 @media only screen and (max-width: 500px) {
     .wrapper {
-        padding-top: 10px;
+        border-radius: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 70px;
     }
     
     .intro {
